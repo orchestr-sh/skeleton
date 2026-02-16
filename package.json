@@ -1,0 +1,40 @@
+{
+  "name": "@orchestr-sh/skeleton",
+  "version": "1.0.0",
+  "description": "Official starter skeleton for Orchestr - Laravel for TypeScript",
+  "main": "dist/bootstrap/app.js",
+  "types": "dist/bootstrap/app.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx watch public/index.ts",
+    "start": "node dist/public/index.js",
+    "orchestr": "tsx bootstrap/cli.ts",
+    "migrate": "tsx bootstrap/cli.ts migrate",
+    "seed": "tsx bootstrap/cli.ts seed",
+    "fresh": "tsx bootstrap/cli.ts migrate:fresh"
+  },
+  "keywords": [
+    "orchestr",
+    "laravel",
+    "typescript",
+    "framework",
+    "skeleton"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@orchestr-sh/orchestr": "^1.9.0",
+    "better-sqlite3": "^11.0.0",
+    "drizzle-orm": ">=0.30.0",
+    "reflect-metadata": "^0.2.2"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.9",
+    "@types/node": "^22.10.5",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

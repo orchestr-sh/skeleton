@@ -9,10 +9,12 @@ import app from './app';
 import database from './database';
 import queue from './queue';
 import cache from './cache';
+import view from './view';
 
 export default {
   app,
   database,
   queue,
   cache,
+  view,
 };

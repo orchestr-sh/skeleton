@@ -12,6 +12,7 @@ import {
   DatabaseServiceProvider,
   QueueServiceProvider,
   CacheServiceProvider,
+  ViewServiceProvider,
   Facade,
 } from '@orchestr-sh/orchestr';
 import config from '../config';
@@ -41,6 +42,9 @@ export function createApp(): Application {
 
   // Cache
   app.register(new CacheServiceProvider(app));
+
+  // Views
+  app.register(new ViewServiceProvider(app));
 
   // --- Application Providers ---
 

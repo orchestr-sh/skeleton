@@ -44,6 +44,8 @@ import {
   CacheClearCommand,
   CacheForgetCommand,
   CacheTableCommand,
+  // View commands
+  MakeViewCommand,
 } from '@orchestr-sh/orchestr';
 
 export class AppConsoleKernel extends ConsoleKernel {
@@ -92,6 +94,9 @@ export class AppConsoleKernel extends ConsoleKernel {
       new CacheClearCommand(this.app),
       new CacheForgetCommand(this.app),
       new CacheTableCommand(this.app),
+
+      // View
+      new MakeViewCommand(this.app),
 
       // Register your custom commands here:
       // new YourCustomCommand(this.app),

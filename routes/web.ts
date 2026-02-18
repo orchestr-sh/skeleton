@@ -5,12 +5,23 @@
  * by the RouteServiceProvider.
  */
 
-import { Route } from '@orchestr-sh/orchestr';
+import { Route, view } from '@orchestr-sh/orchestr';
 
-Route.get('/', (_req: any, res: any) => {
-  res.json({
-    message: 'Welcome to Orchestr!',
-    docs: 'https://github.com/orchestr-sh/orchestr',
+Route.get('/', () => {
+  return view('welcome', {
+    name: 'World',
+    appName: 'Orchestr',
+    features: [
+      'Service Container & IoC',
+      'Service Providers & Facades',
+      'Routing with Middleware',
+      'Database (Drizzle / Ensemble ORM)',
+      'Queue System (Sync, Database, Null)',
+      'Cache System (Array, File, Database)',
+      'View System with Template Engine',
+      'Console Commands (Artisan-style)',
+      'Events & Listeners',
+    ],
   });
 });
 

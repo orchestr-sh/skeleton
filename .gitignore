@@ -5,3 +5,6 @@ storage/framework/cache/data/
 *.sqlite
 .env
 .DS_Store
+coverage/
+.idea/
+*.log

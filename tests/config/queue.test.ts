@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
-import queueConfig from '../../config/queue';
+import queueConfig from '@/config/queue';
 
 describe('Queue Config', () => {
   const originalEnv = process.env;
@@ -20,7 +20,7 @@ describe('Queue Config', () => {
 
   it('should use QUEUE_CONNECTION from environment', async () => {
     process.env.QUEUE_CONNECTION = 'database';
-    const configModule = await import('../../config/queue');
+    const configModule = await import('@/config/queue');
     expect(configModule.default.default).toBe('database');
   });
 

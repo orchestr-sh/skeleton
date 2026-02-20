@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
-import appConfig from '../../config/app';
+import appConfig from '@/config/app';
 
 describe('App Config', () => {
   const originalEnv = process.env;
@@ -20,7 +20,7 @@ describe('App Config', () => {
 
   it('should use APP_NAME from environment', async () => {
     process.env.APP_NAME = 'TestApp';
-    const configModule = await import('../../config/app');
+    const configModule = await import('@/config/app');
     expect(configModule.default.name).toBe('TestApp');
   });
 
@@ -31,7 +31,7 @@ describe('App Config', () => {
 
   it('should use APP_ENV from environment', async () => {
     process.env.APP_ENV = 'production';
-    const configModule = await import('../../config/app');
+    const configModule = await import('@/config/app');
     expect(configModule.default.env).toBe('production');
   });
 
@@ -42,7 +42,7 @@ describe('App Config', () => {
 
   it('should set debug to true when APP_DEBUG is "true"', async () => {
     process.env.APP_DEBUG = 'true';
-    const configModule = await import('../../config/app');
+    const configModule = await import('@/config/app');
     expect(configModule.default.debug).toBe(true);
   });
 
@@ -53,7 +53,7 @@ describe('App Config', () => {
 
   it('should use APP_PORT from environment', async () => {
     process.env.APP_PORT = '8080';
-    const configModule = await import('../../config/app');
+    const configModule = await import('@/config/app');
     expect(configModule.default.port).toBe(8080);
   });
 });

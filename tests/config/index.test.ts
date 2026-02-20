@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import config from '../../config/index';
+import config from '@/config/index';
 
 describe('Config Index', () => {
   it('should export app config', () => {

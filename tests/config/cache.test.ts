@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
-import cacheConfig from '../../config/cache';
+import cacheConfig from '@/config/cache';
 
 describe('Cache Config', () => {
   const originalEnv = process.env;
@@ -20,7 +20,7 @@ describe('Cache Config', () => {
 
   it('should use CACHE_STORE from environment', async () => {
     process.env.CACHE_STORE = 'array';
-    const configModule = await import('../../config/cache');
+    const configModule = await import('@/config/cache');
     expect(configModule.default.default).toBe('array');
   });
 
@@ -31,7 +31,7 @@ describe('Cache Config', () => {
 
   it('should use CACHE_PREFIX from environment', async () => {
     process.env.CACHE_PREFIX = 'custom_';
-    const configModule = await import('../../config/cache');
+    const configModule = await import('@/config/cache');
     expect(configModule.default.prefix).toBe('custom_');
   });
 

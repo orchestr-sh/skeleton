@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import path from 'path';
-import viewConfig from '../../config/view';
+import viewConfig from '@/config/view';
 
 describe('View Config', () => {
   it('should have paths array', () => {

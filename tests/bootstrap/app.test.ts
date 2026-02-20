@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import { Application } from '@orchestr-sh/orchestr';
-import { createApp } from '../../bootstrap/app';
+import { createApp } from '@/bootstrap/app';
 
 describe('Bootstrap App', () => {
   let app: Application;
@@ -18,7 +18,7 @@ describe('Bootstrap App', () => {
   });
 
   it('should export createApp as default', async () => {
-    const createAppDefault = await import('../../bootstrap/app');
+    const createAppDefault = await import('@/bootstrap/app');
     expect(createAppDefault.default).toBe(createApp);
   });
 

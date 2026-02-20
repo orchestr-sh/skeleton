@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import { Application } from '@orchestr-sh/orchestr';
-import { AppConsoleKernel } from '../../../app/Console/Kernel';
+import { AppConsoleKernel } from '@/app/Console/Kernel';
 
 describe('AppConsoleKernel', () => {
   let app: Application;

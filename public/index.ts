@@ -10,7 +10,7 @@
  */
 
 import { Kernel } from '@orchestr-sh/orchestr';
-import { createApp } from '../bootstrap/app';
+import { createApp } from '@/bootstrap/app';
 
 async function main() {
   const app = createApp();

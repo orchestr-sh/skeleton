@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import { Application } from '@orchestr-sh/orchestr';
-import { AppServiceProvider } from '../../../app/Providers/AppServiceProvider';
+import { AppServiceProvider } from '@/app/Providers/AppServiceProvider';
 
 describe('AppServiceProvider', () => {
   let app: Application;

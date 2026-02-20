@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import { Application } from '@orchestr-sh/orchestr';
-import { createApp } from '../../bootstrap/app';
+import { createApp } from '@/bootstrap/app';
 
 describe('Web Routes', () => {
   let app: Application;
@@ -11,11 +11,11 @@ describe('Web Routes', () => {
   });
 
   it('should load web routes without errors', async () => {
-    await expect(import('../../routes/web')).resolves.not.toThrow();
+    await expect(import('@/routes/web')).resolves.not.toThrow();
   });
 
   it('should have routes defined', async () => {
-    await import('../../routes/web');
+    await import('@/routes/web');
     // Routes are registered during import
     expect(true).toBe(true);
   });

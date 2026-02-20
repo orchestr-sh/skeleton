@@ -1,6 +1,6 @@
 {
   "name": "@orchestr-sh/skeleton",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Official starter skeleton for Orchestr - Laravel for TypeScript",
   "main": "dist/bootstrap/app.js",
   "types": "dist/bootstrap/app.d.ts",
@@ -48,6 +48,6 @@
     "vitest": "^2.1.8"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=22.0.0"
   }
 }

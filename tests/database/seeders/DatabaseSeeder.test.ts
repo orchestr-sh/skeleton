@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest';
-import { DatabaseSeeder } from '../../../database/seeders/DatabaseSeeder';
+import { DatabaseSeeder } from '@/database/seeders/DatabaseSeeder';
 
 describe('DatabaseSeeder', () => {
   let seeder: DatabaseSeeder;

@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { createApp } from '../../bootstrap/app';
+import { createApp } from '@/bootstrap/app';
 import { Kernel } from '@orchestr-sh/orchestr';
 
 describe('Public Index', () => {
@@ -59,7 +59,7 @@ describe('Public Index', () => {
 
   it('should have main function structure', async () => {
     // Test that the public index module can be imported
-    const indexModule = await import('../../public/index');
+    const indexModule = await import('@/public/index');
     expect(indexModule).toBeDefined();
   });
 });

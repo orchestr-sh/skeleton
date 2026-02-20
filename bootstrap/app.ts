@@ -15,10 +15,10 @@ import {
   ViewServiceProvider,
   Facade,
 } from '@orchestr-sh/orchestr';
-import config from '../config';
-import { AppServiceProvider } from '../app/Providers/AppServiceProvider';
-import { EventServiceProvider } from '../app/Providers/EventServiceProvider';
-import { RouteServiceProvider } from '../app/Providers/RouteServiceProvider';
+import config from '@/config';
+import { AppServiceProvider } from '@/app/Providers/AppServiceProvider';
+import { EventServiceProvider } from '@/app/Providers/EventServiceProvider';
+import { RouteServiceProvider } from '@/app/Providers/RouteServiceProvider';
 
 /**
  * Create and configure the application

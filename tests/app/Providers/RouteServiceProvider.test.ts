@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import { Application, Facade } from '@orchestr-sh/orchestr';
-import { RouteServiceProvider } from '../../../app/Providers/RouteServiceProvider';
+import { RouteServiceProvider } from '@/app/Providers/RouteServiceProvider';
 
 describe('RouteServiceProvider', () => {
   let app: Application;

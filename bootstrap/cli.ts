@@ -16,7 +16,7 @@
  */
 
 import { createApp } from './app';
-import { AppConsoleKernel } from '../app/Console/Kernel';
+import { AppConsoleKernel } from '@/app/Console/Kernel';
 
 async function main() {
   const app = createApp();

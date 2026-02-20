@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { createApp } from '../bootstrap/app';
-import { AppConsoleKernel } from '../app/Console/Kernel';
+import { createApp } from '../../bootstrap/app';
+import { AppConsoleKernel } from '../../app/Console/Kernel';
 
 describe('CLI Bootstrap', () => {
   const originalArgv = process.argv;
@@ -32,7 +32,7 @@ describe('CLI Bootstrap', () => {
 
   it('should have main function structure', async () => {
     // Test that the CLI module can be imported
-    const cliModule = await import('../bootstrap/cli');
+    const cliModule = await import('../../bootstrap/cli');
     expect(cliModule).toBeDefined();
   });
 });

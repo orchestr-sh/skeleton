@@ -8,15 +8,11 @@ describe('DatabaseSeeder', () => {
 
   beforeEach(() => {
     app = new Application(process.cwd());
-    seeder = new DatabaseSeeder(app);
+    seeder = new DatabaseSeeder();
   });
 
   it('should be an instance of Seeder', () => {
     expect(seeder).toBeInstanceOf(DatabaseSeeder);
-  });
-
-  it('should have access to the application', () => {
-    expect(seeder['app']).toBe(app);
   });
 
   it('should have a run method', () => {

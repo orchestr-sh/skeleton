@@ -1,13 +1,10 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest';
-import { Application } from '@orchestr-sh/orchestr';
 import { DatabaseSeeder } from '../../../database/seeders/DatabaseSeeder';
 
 describe('DatabaseSeeder', () => {
-  let app: Application;
   let seeder: DatabaseSeeder;
 
   beforeEach(() => {
-    app = new Application(process.cwd());
     seeder = new DatabaseSeeder();
   });
 

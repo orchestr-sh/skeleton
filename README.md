@@ -105,37 +105,29 @@ Views live in `resources/views/` and use a Blade-inspired template syntax.
 **Returning a view from a route:**
 
 ```typescript
-import { Route, view } from '@orchestr-sh/orchestr';
+import { Route, view } from "@orchestr-sh/orchestr";
 
-Route.get('/', () => {
-  return view('welcome', { name: 'World' });
+Route.get("/", () => {
+  return view("welcome", { name: "World" });
 });
 ```
 
 **Template syntax:**
 
 ```html
-{{ variable }}              <!-- HTML-escaped output -->
-{!! variable !!}            <!-- Raw (unescaped) output -->
+{{ variable }}
+<!-- HTML-escaped output -->
+{!! variable !!}
+<!-- Raw (unescaped) output -->
 
-@if(condition)
-  ...
-@elseif(other)
-  ...
-@else
-  ...
-@endif
-
-@foreach(items as item)
-  {{ item }}
-@endforeach
-
-@include('partials.nav')
+@if(condition) ... @elseif(other) ... @else ... @endif @foreach(items as item)
+{{ item }} @endforeach @include('partials.nav')
 ```
 
 **Layouts** — define a base layout with named slots, then extend it from child templates:
 
 `resources/views/layouts/app.html`
+
 ```html
 <!DOCTYPE html>
 <html>
@@ -146,20 +138,19 @@ Route.get('/', () => {
 ```
 
 `resources/views/welcome.html`
-```html
-@extends('layouts.app')
 
-@section('content')
-  <h1>Hello, {{ name }}</h1>
+```html
+@extends('layouts.app') @section('content')
+<h1>Hello, {{ name }}</h1>
 @endsection
 ```
 
 **Sharing data with all views:**
 
 ```typescript
-import { View } from '@orchestr-sh/orchestr';
+import { View } from "@orchestr-sh/orchestr";
 
-View.share('appName', 'My App');
+View.share("appName", "My App");
 ```
 
 ## Configuration

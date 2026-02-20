@@ -1,7 +1,0 @@
-node_modules/
-dist/
-storage/
-coverage/
-*.config.js
-*.config.ts
-vitest.config.ts

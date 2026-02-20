@@ -29,30 +29,27 @@ jobs:
       - name: Run linter
         run: |
           docker run --rm \
-            -v $(pwd):/workspace \
-            -w /workspace \
+            -w /app \
             orchestr-test:latest \
             npm run lint
 
       - name: Run tests
         run: |
           docker run --rm \
-            -v $(pwd):/workspace \
-            -w /workspace \
+            -w /app \
             orchestr-test:latest \
             npm run test:run
 
       - name: Generate coverage report
         run: |
-          docker run --rm \
-            -v $(pwd):/workspace \
-            -w /workspace \
-            orchestr-test:latest \
-            npm run test:coverage
+          docker create --name test-container orchestr-test:latest
+          docker cp test-container:/app/coverage ./coverage || true
+          docker rm test-container
         continue-on-error: true
 
       - name: Upload coverage reports
         uses: codecov/codecov-action@v4
+        if: always()
         with:
           files: ./coverage/coverage-final.json
           fail_ci_if_error: false

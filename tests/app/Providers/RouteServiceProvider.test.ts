@@ -1,5 +1,5 @@
-import { describe, it, expect, beforeEach, vi } from 'vitest';
-import { Application } from '@orchestr-sh/orchestr';
+import { describe, it, expect, beforeEach } from 'vitest';
+import { Application, Facade } from '@orchestr-sh/orchestr';
 import { RouteServiceProvider } from '../../../app/Providers/RouteServiceProvider';
 
 describe('RouteServiceProvider', () => {
@@ -8,6 +8,7 @@ describe('RouteServiceProvider', () => {
 
   beforeEach(() => {
     app = new Application(process.cwd());
+    Facade.setFacadeApplication(app);
     provider = new RouteServiceProvider(app);
   });
 
@@ -20,11 +21,7 @@ describe('RouteServiceProvider', () => {
   });
 
   it('should boot and load web routes', async () => {
-    const importSpy = vi.spyOn(provider, 'boot');
-    
-    await provider.boot();
-    
-    expect(importSpy).toHaveBeenCalled();
+    await expect(provider.boot()).resolves.not.toThrow();
   });
 
   it('should be registerable with the application', () => {

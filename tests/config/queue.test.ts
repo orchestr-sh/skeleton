@@ -18,10 +18,10 @@ describe('Queue Config', () => {
     expect(queueConfig.default).toBe('sync');
   });
 
-  it('should use QUEUE_CONNECTION from environment', () => {
+  it('should use QUEUE_CONNECTION from environment', async () => {
     process.env.QUEUE_CONNECTION = 'database';
-    const config = require('../../config/queue').default;
-    expect(config.default).toBe('database');
+    const configModule = await import('../../config/queue');
+    expect(configModule.default.default).toBe('database');
   });
 
   it('should have sync connection configuration', () => {

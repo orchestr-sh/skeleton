@@ -18,10 +18,10 @@ describe('App Config', () => {
     expect(appConfig.name).toBe('Orchestr');
   });
 
-  it('should use APP_NAME from environment', () => {
+  it('should use APP_NAME from environment', async () => {
     process.env.APP_NAME = 'TestApp';
-    const config = require('../../config/app').default;
-    expect(config.name).toBe('TestApp');
+    const configModule = await import('../../config/app');
+    expect(configModule.default.name).toBe('TestApp');
   });
 
   it('should have default env', () => {
@@ -29,10 +29,10 @@ describe('App Config', () => {
     expect(appConfig.env).toBe('local');
   });
 
-  it('should use APP_ENV from environment', () => {
+  it('should use APP_ENV from environment', async () => {
     process.env.APP_ENV = 'production';
-    const config = require('../../config/app').default;
-    expect(config.env).toBe('production');
+    const configModule = await import('../../config/app');
+    expect(configModule.default.env).toBe('production');
   });
 
   it('should have default debug value', () => {
@@ -40,10 +40,10 @@ describe('App Config', () => {
     expect(appConfig.debug).toBe(false);
   });
 
-  it('should set debug to true when APP_DEBUG is "true"', () => {
+  it('should set debug to true when APP_DEBUG is "true"', async () => {
     process.env.APP_DEBUG = 'true';
-    const config = require('../../config/app').default;
-    expect(config.debug).toBe(true);
+    const configModule = await import('../../config/app');
+    expect(configModule.default.debug).toBe(true);
   });
 
   it('should have default port', () => {
@@ -51,9 +51,9 @@ describe('App Config', () => {
     expect(appConfig.port).toBe(3000);
   });
 
-  it('should use APP_PORT from environment', () => {
+  it('should use APP_PORT from environment', async () => {
     process.env.APP_PORT = '8080';
-    const config = require('../../config/app').default;
-    expect(config.port).toBe(8080);
+    const configModule = await import('../../config/app');
+    expect(configModule.default.port).toBe(8080);
   });
 });

@@ -18,10 +18,10 @@ describe('Cache Config', () => {
     expect(cacheConfig.default).toBe('file');
   });
 
-  it('should use CACHE_STORE from environment', () => {
+  it('should use CACHE_STORE from environment', async () => {
     process.env.CACHE_STORE = 'array';
-    const config = require('../../config/cache').default;
-    expect(config.default).toBe('array');
+    const configModule = await import('../../config/cache');
+    expect(configModule.default.default).toBe('array');
   });
 
   it('should have default prefix', () => {
@@ -29,10 +29,10 @@ describe('Cache Config', () => {
     expect(cacheConfig.prefix).toBe('orchestr_cache_');
   });
 
-  it('should use CACHE_PREFIX from environment', () => {
+  it('should use CACHE_PREFIX from environment', async () => {
     process.env.CACHE_PREFIX = 'custom_';
-    const config = require('../../config/cache').default;
-    expect(config.prefix).toBe('custom_');
+    const configModule = await import('../../config/cache');
+    expect(configModule.default.prefix).toBe('custom_');
   });
 
   it('should have array store configuration', () => {

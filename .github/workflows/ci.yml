@@ -42,10 +42,11 @@ jobs:
 
       - name: Generate coverage report
         run: |
-          docker create --name test-container orchestr-test:latest
-          docker cp test-container:/app/coverage ./coverage || true
-          docker rm test-container
-        continue-on-error: true
+          docker run --rm \
+            -v $(pwd)/coverage:/app/coverage \
+            -w /app \
+            orchestr-test:latest \
+            npm run test:coverage || true
 
       - name: Upload coverage reports
         uses: codecov/codecov-action@v4

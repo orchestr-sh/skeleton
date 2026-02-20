@@ -23,7 +23,8 @@
     "config/**/*",
     "database/**/*",
     "public/**/*",
-    "routes/**/*"
+    "routes/**/*",
+    "tests/**/*"
   ],
   "exclude": ["node_modules", "dist", "storage"]
 }

@@ -12,7 +12,12 @@
     "orchestr": "tsx bootstrap/cli.ts",
     "migrate": "tsx bootstrap/cli.ts migrate",
     "seed": "tsx bootstrap/cli.ts seed",
-    "fresh": "tsx bootstrap/cli.ts migrate:fresh"
+    "fresh": "tsx bootstrap/cli.ts migrate:fresh",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "test:lint": "eslint .",
+    "lint": "eslint . --fix"
   },
   "keywords": [
     "orchestr",
@@ -30,10 +35,17 @@
     "reflect-metadata": "^0.2.2"
   },
   "devDependencies": {
+    "@eslint/js": "^9.17.0",
     "@types/better-sqlite3": "^7.6.9",
     "@types/node": "^22.10.5",
+    "@typescript-eslint/eslint-plugin": "^8.15.0",
+    "@typescript-eslint/parser": "^8.15.0",
+    "@vitest/coverage-v8": "^2.1.8",
+    "eslint": "^9.17.0",
     "tsx": "^4.19.2",
-    "typescript": "^5.7.3"
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.15.0",
+    "vitest": "^2.1.8"
   },
   "engines": {
     "node": ">=18.0.0"

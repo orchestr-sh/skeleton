@@ -14,6 +14,9 @@ COPY database ./database
 COPY public ./public
 COPY routes ./routes
 COPY resources ./resources
+COPY tests ./tests
+COPY vitest.config.ts ./
+COPY eslint.config.mjs ./
 
 RUN npm run build:prod
 

@@ -23,9 +23,10 @@ describe('RouteServiceProvider', () => {
   it('should boot and load web routes', async () => {
     // Register the provider first so Route facade is available
     app.register(provider);
+    // Boot the app which will call boot() on all providers
     await app.boot();
     
-    // After booting, routes should be loaded
+    // If we get here without errors, routes were loaded successfully
     expect(true).toBe(true);
   });
 

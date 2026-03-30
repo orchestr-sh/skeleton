@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { createApp } from '@/bootstrap/app';
 import { AppConsoleKernel } from '@/app/Console/Kernel';
+import { createApp } from '@/bootstrap/app';
 
 describe('CLI Bootstrap', () => {
   const originalArgv = process.argv;

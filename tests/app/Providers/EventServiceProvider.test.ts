@@ -1,5 +1,5 @@
-import { describe, it, expect, beforeEach } from 'vitest';
 import { Application } from '@orchestr-sh/orchestr';
+import { describe, it, expect, beforeEach } from 'vitest';
 import { EventServiceProvider } from '@/app/Providers/EventServiceProvider';
 
 describe('EventServiceProvider', () => {

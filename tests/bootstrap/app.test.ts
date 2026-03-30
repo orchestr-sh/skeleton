@@ -1,5 +1,5 @@
-import { describe, it, expect, beforeEach } from 'vitest';
 import { Application } from '@orchestr-sh/orchestr';
+import { describe, it, expect, beforeEach } from 'vitest';
 import { createApp } from '@/bootstrap/app';
 
 describe('Bootstrap App', () => {

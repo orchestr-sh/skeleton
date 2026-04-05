@@ -1,5 +1,5 @@
-import { describe, it, expect } from 'vitest';
 import { Controller as BaseController } from '@orchestr-sh/orchestr';
+import { describe, it, expect } from 'vitest';
 
 describe('Controller', () => {
   it('should be importable', async () => {

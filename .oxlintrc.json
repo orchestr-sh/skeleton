@@ -13,9 +13,11 @@
       }
     ],
     "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/no-non-null-assertion": "warn",
-    "@typescript-eslint/no-require-imports": "off",
-    "no-console": "off"
+    "no-console": "off",
+    "prefer-const": "error",
+    "no-var": "error"
   },
   "settings": {
     "jsdoc": {
@@ -36,13 +38,5 @@
     "builtin": true
   },
   "globals": {},
-  "ignorePatterns": [
-    "node_modules/**",
-    "dist/**",
-    "storage/**",
-    "coverage/**",
-    "*.config.js",
-    "vitest.config.ts",
-    "*.md"
-  ]
+  "ignorePatterns": ["dist/**", "node_modules/**", "coverage/**", "**/*.js", "**/*.d.ts", "vitest.config.ts"]
 }

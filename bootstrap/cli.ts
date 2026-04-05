@@ -15,8 +15,8 @@
  *   npm run orchestr make:job ProcessPodcast
  */
 
-import { createApp } from './app';
 import { AppConsoleKernel } from '@/app/Console/Kernel';
+import { createApp } from './app';
 
 async function main() {
   const app = createApp();

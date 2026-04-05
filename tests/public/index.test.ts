@@ -1,6 +1,6 @@
+import { Kernel } from '@orchestr-sh/orchestr';
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { createApp } from '@/bootstrap/app';
-import { Kernel } from '@orchestr-sh/orchestr';
 
 describe('Public Index', () => {
   const originalEnv = process.env;

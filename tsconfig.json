@@ -3,6 +3,7 @@
     "target": "esnext",
     "module": "esnext",
     "lib": ["ESNext"],
+    "types": ["node", "vitest/globals"],
     "outDir": "./dist",
     "rootDir": ".",
     "declaration": true,

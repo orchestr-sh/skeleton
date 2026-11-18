@@ -1,17 +1,18 @@
 {
   "name": "@orchestr-sh/skeleton",
-  "version": "1.2.1",
+  "version": "1.3.0",
+  "type": "module",
   "description": "Official starter skeleton for Orchestr - Laravel for TypeScript",
   "main": "dist/bootstrap/app.js",
   "types": "dist/bootstrap/app.d.ts",
   "scripts": {
     "build": "tsc",
-    "build:prod": "tsc && cp -r resources dist/resources && mkdir -p dist/storage/framework/cache/data && mkdir -p dist/database",
+    "build:prod": "tsc && cp -r resources dist/resources && mkdir -p dist/bootstrap/cache dist/storage/framework/cache/data dist/database",
     "dev": "tsx watch public/index.ts",
     "start": "node dist/public/index.js",
     "orchestr": "tsx bootstrap/cli.ts",
     "migrate": "tsx bootstrap/cli.ts migrate",
-    "seed": "tsx bootstrap/cli.ts seed",
+    "seed": "tsx bootstrap/cli.ts db:seed",
     "fresh": "tsx bootstrap/cli.ts migrate:fresh",
     "test": "vitest",
     "test:run": "vitest run",
@@ -30,23 +31,20 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@orchestr-sh/orchestr": "^1.11.1",
-    "better-sqlite3": "^11.0.0",
-    "drizzle-orm": ">=0.30.0",
+    "@orchestr-sh/orchestr": "^1.12.10",
     "reflect-metadata": "^0.2.2"
   },
   "devDependencies": {
-    "@types/better-sqlite3": "^7.6.13",
-    "@types/node": "^25.5.0",
-    "@vitest/coverage-v8": "^4.1.2",
-    "oxfmt": "^0.44.0",
-    "oxlint": "^1.59.0",
-    "oxlint-tsgolint": "^0.20.0",
-    "tsx": "^4.21.0",
-    "typescript": "^6.0.2",
-    "vitest": "^4.1.2"
+    "@types/node": "^26.6.6",
+    "@vitest/coverage-v8": "^5.1.1",
+    "oxfmt": "^0.79.0",
+    "oxlint": "^1.94.0",
+    "oxlint-tsgolint": "^7.0.2007",
+    "tsx": "^4.23.15",
+    "typescript": "^6.0.3",
+    "vitest": "^5.1.1"
   },
   "engines": {
-    "node": "^22.14.0 || >=24.0.0"
+    "node": "^22.18.0 || >=24.0.0"
   }
 }

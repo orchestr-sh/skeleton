@@ -15,10 +15,11 @@
  *   npm run orchestr make:job ProcessPodcast
  */
 
-import { AppConsoleKernel } from '@/app/Console/Kernel';
-import { createApp } from './app';
+import { pathToFileURL } from 'node:url';
+import { AppConsoleKernel } from '../app/Console/Kernel.js';
+import { createApp } from './app.js';
 
-async function main() {
+export async function main(): Promise<void> {
   const app = createApp();
 
   // Boot all service providers
@@ -26,10 +27,18 @@ async function main() {
 
   // Create console kernel and run
   const kernel = new AppConsoleKernel(app);
+
+  // Import any custom commands in app/Console/Commands (they can override
+  // framework commands by name)
+  await kernel.discoverCommands();
+
   await kernel.run(process.argv);
 }
 
-main().catch((error) => {
-  console.error(`\x1b[31mError: ${error.message}\x1b[0m`);
-  process.exit(1);
-});
+// Execute when run directly, but stay inert when imported (tests).
+if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) {
+  main().catch((error) => {
+    console.error(`\x1b[31mError: ${error.message}\x1b[0m`);
+    process.exit(1);
+  });
+}

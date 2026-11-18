@@ -1,6 +1,7 @@
 node_modules/
 dist/
 storage/framework/cache/data/
+storage/framework/views/
 *.db
 *.sqlite
 .env

@@ -10,9 +10,10 @@
  */
 
 import { Kernel } from '@orchestr-sh/orchestr';
-import { createApp } from '@/bootstrap/app';
+import { pathToFileURL } from 'node:url';
+import { createApp } from '../bootstrap/app.js';
 
-async function main() {
+export async function main(): Promise<void> {
   const app = createApp();
 
   // Boot all service providers
@@ -29,7 +30,11 @@ async function main() {
   });
 }
 
-main().catch((error) => {
-  console.error('Failed to start server:', error);
-  process.exit(1);
-});
+// Start the server when this module is run directly (npm run dev / start),
+// but not when it is imported - e.g. by the test suite.
+if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) {
+  main().catch((error) => {
+    console.error('Failed to start server:', error);
+    process.exit(1);
+  });
+}

@@ -27,7 +27,7 @@ describe('Database Config', () => {
   it('should have sqlite connection configuration', () => {
     expect(databaseConfig.connections.sqlite).toBeDefined();
     expect(databaseConfig.connections.sqlite.adapter).toBe('drizzle');
-    expect(databaseConfig.connections.sqlite.driver).toBe('better-sqlite3');
+    expect(databaseConfig.connections.sqlite.driver).toBe('sqlite');
   });
 
   it('should have default database path', () => {

@@ -16,7 +16,6 @@ COPY routes ./routes
 COPY resources ./resources
 COPY tests ./tests
 COPY vitest.config.ts ./
-COPY eslint.config.mjs ./
 
 RUN npm run build:prod
 
@@ -32,7 +31,7 @@ RUN npm ci --omit=dev
 
 # Copy the entire dist/ contents as the app root
 COPY --from=builder /app/dist/ ./
-COPY ecosystem.config.js ./
+COPY ecosystem.config.cjs ./
 
 ENV NODE_ENV=production
 ENV APP_ENV=production
@@ -41,4 +40,4 @@ ENV APP_PORT=3000
 
 EXPOSE 3000
 
-CMD ["pm2-runtime", "ecosystem.config.js"]
+CMD ["pm2-runtime", "ecosystem.config.cjs"]

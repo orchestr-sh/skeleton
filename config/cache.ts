@@ -33,4 +33,13 @@ export default {
       driver: 'null',
     },
   },
+
+  /**
+   * Stampede protection for Cache.remember() - routes the compute callback
+   * through a cache lock so concurrent callers only ever run it once.
+   */
+  remember: {
+    lock: false,
+    lock_seconds: 30,
+  },
 };
